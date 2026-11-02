@@ -1,91 +1,209 @@
-<!DOCTYPE html>
-<html>
-<style>
-body, html {
-  height: 100%;
-  margin: 0;
-}
-
-.bgimg {
-  background-image: url('https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-  position: relative;
-  color: white;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 25px;
-}
-
-.topleft {
-  position: absolute;
-  top: 0;
-  left: 16px;
-}
-
-.bottomleft {
-  position: absolute;
-  bottom: 0;
-  left: 16px;
-}
-
-.middle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-hr {
-  margin: auto;
-  width: 40%;
-}
-</style>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Abinesh Subramani</title>
+  <meta name="description" content="Abinesh Subramani: senior backend engineer (Java, distributed systems, cloud) and founder of RefinePoint, a reconciliation SaaS with agentic AI. Ask about him with an AI model that runs in your browser.">
+  <meta property="og:title" content="Abinesh Subramani — Backend engineer and founder of RefinePoint">
+  <meta property="og:description" content="8+ years building Java and Spark platforms for finance. Founder and sole engineer of RefinePoint.">
+  <meta property="og:type" content="profile">
+  <meta name="theme-color" content="#0f766e">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
 
-<div class="bgimg">
+  <header class="site-header">
+    <nav class="wrap nav" aria-label="Main">
+      <a class="brand" href="#top">Abinesh Subramani</a>
+      <ul>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#refinepoint">RefinePoint</a></li>
+        <li><a href="#ask">Ask about me</a></li>
+        <li><a href="#skills">Skills</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <div class="middle">
-    <h1>COMING SOON</h1>
-    <hr>
-    <p id="demo" style="font-size:30px"></p>
-  </div>
-  <div class="bottomleft">
-    <a href="https://abinesh1006.github.io/accrue-quest/">Home</a>
-  </div>
-</div>
+  <main id="main">
+    <section class="hero wrap" id="top">
+      <p class="eyebrow">Bengaluru, India</p>
+      <h1>Abinesh Subramani</h1>
+      <p class="lede">Backend engineer and founder. I build the systems that make financial data agree: Java and Spark
+        platforms that reconcile billions of records at a global bank, and <a href="#refinepoint">RefinePoint</a>,
+        a reconciliation product I designed and built alone.</p>
+      <ul class="stats" aria-label="Highlights">
+        <li><strong>8+ years</strong><span>Java, Spring Boot, Spark, Kubernetes</span></li>
+        <li><strong>1.5B+</strong><span>financial records a month on the platform I lead</span></li>
+        <li><strong>14 services</strong><span>built solo for RefinePoint, live with billing</span></li>
+        <li><strong>300,000+</strong><span>users on the identity platform I worked on</span></li>
+      </ul>
+      <div class="actions">
+        <a class="btn btn-primary" href="#ask">Ask about me</a>
+        <a class="btn" href="resume/Abinesh_Subramani_Resume.pdf" download>Download résumé</a>
+        <a class="btn" href="mailto:abineshsiva191@gmail.com">Email</a>
+        <a class="btn" href="https://www.linkedin.com/in/abineshsubramani" rel="me">LinkedIn</a>
+        <a class="btn" href="https://github.com/abinesh1006" rel="me">GitHub</a>
+      </div>
+    </section>
 
-<script>
-// Set the date we're counting down to
-var countDownDate = new Date("Jan 1, 2025 12:00:00").getTime();
+    <section class="wrap section" id="experience" aria-labelledby="experience-title">
+      <h2 id="experience-title">Experience</h2>
 
-// Update the count down every 1 second
-var countdownfunction = setInterval(function() {
+      <article class="job">
+        <header class="job-head">
+          <div><h3>Societe Generale Global Solutions Centre</h3><p class="role">Specialist Software Engineer · Bengaluru</p></div>
+          <p class="when">Nov 2022 – present</p>
+        </header>
+        <ul>
+          <li>Led design and delivery of a reconciliation platform (Java 17, Spring Boot, Apache Spark) processing
+            <b>1.5B+ financial records a month</b> at 99.9% availability; owned it from architecture to production rollout and monitoring.</li>
+          <li>Re-engineered Spark batch and streaming jobs: <b>60% more throughput</b>, processing cut from hours to minutes;
+            multi-key matching of 7M+ records in about 40 minutes.</li>
+          <li>Built <b>Orbiter</b>, an in-house orchestrator that replaced Apache Airflow: configurable multi-step pipelines that
+            submit each Spark job to Kubernetes as a SparkApplication (Spark Operator) when the previous step completes.</li>
+          <li>Built 10+ Spring Boot microservices for data onboarding, file routing and reconciliation; configuration-driven
+            APIs cut onboarding of new data sources by 40%.</li>
+          <li>Event-driven flows on Azure Event Hub with end-to-end latency under 3 seconds; services on Kubernetes with autoscaling
+            and zero-downtime deployments.</li>
+          <li><b>Pinnacle Performer Award 2024</b> for the Spark reconciliation pipelines; <b>Team of the Year 2024</b> for the
+            front-office/back-office reconciliation platform, where I built the core matching and break management.</li>
+        </ul>
+      </article>
 
-  // Get todays date and time
-  var now = new Date().getTime();
-  
-  // Find the distance between now an the count down date
-  var distance = countDownDate - now;
-  
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  
-  // Output the result in an element with id="demo"
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-  
-  // If the count down is over, write some text 
-  if (distance < 0) {
-    clearInterval(countdownfunction);
-    document.getElementById("demo").innerHTML = "EXPIRED";
-  }
-}, 1000);
-</script>
+      <article class="job">
+        <header class="job-head">
+          <div><h3>Publicis Sapient</h3><p class="role">Software Engineer</p></div>
+          <p class="when">Jul 2022 – Nov 2022</p>
+        </header>
+        <ul>
+          <li>Spring Boot microservices, CI/CD pipelines (Jenkins, GitLab CI, Azure DevOps) and Docker images for Kubernetes.</li>
+        </ul>
+      </article>
 
+      <article class="job">
+        <header class="job-head">
+          <div><h3>Tata Consultancy Services</h3><p class="role">IT Analyst</p></div>
+          <p class="when">Jul 2018 – Jul 2022</p>
+        </header>
+        <ul>
+          <li>Backend services and REST APIs for an authentication and access platform serving <b>300,000+ users</b>,
+            integrating Okta, OpenLDAP and CA Directory.</li>
+          <li>Integrations for Ping Federate, Okta and CA Identity Manager: single sign-on, roles and access requests.</li>
+          <li>Migrated legacy identity applications to Spring Boot microservices on Azure Kubernetes Service.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="wrap section" id="refinepoint" aria-labelledby="refinepoint-title">
+      <h2 id="refinepoint-title">RefinePoint <span class="tag">Founder &amp; sole engineer</span></h2>
+      <p class="section-lede">Reconciliation software for finance teams that still match records by hand in spreadsheets:
+        enterprise-grade matching, configured by AI, priced for a small team.
+        <a href="https://refinepoint.com">refinepoint.com</a></p>
+      <div class="cards">
+        <article class="card">
+          <h3>Platform</h3>
+          <p>14 Spring Boot 3 / Java 21 microservices behind Spring Cloud Gateway, Kafka events, PostgreSQL schema-per-service,
+            Keycloak single sign-on and a React + TypeScript front end. Live with Paddle subscription billing.</p>
+        </article>
+        <article class="card">
+          <h3>Matching engine</h3>
+          <p>Multi-pass two-, three- and four-way matching. Data preparation is pushed down to DuckDB SQL so it scales with
+            volume; a custom expression language and plugin API let customers write their own rules.</p>
+        </article>
+        <article class="card">
+          <h3>Agentic AI</h3>
+          <p>A rule-builder agent that writes rules by calling tools (validate, test on sample records, inspect lookup tables)
+            for up to 8 steps and only answers once its rule validates. An MCP server with 22 tools lets external agents
+            design and run reconciliations under the user's own permissions.</p>
+        </article>
+        <article class="card">
+          <h3>AI that can be trusted with money</h3>
+          <p>Drafts reconciliations from plain English, reads bank statements from PDFs and images, triages exceptions.
+            The model proposes, code verifies against real data, a person approves. It never writes SQL, and runs on
+            Claude or a local model.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap section" id="ask" aria-labelledby="ask-title">
+      <h2 id="ask-title">Ask about me</h2>
+      <p class="section-lede">A small open-source language model runs <b>inside your browser</b> (a GGUF model through
+        llama.cpp compiled to WebAssembly). A keyword search picks the relevant facts from my profile and the model answers
+        from those only. Nothing you type leaves your device.</p>
+
+      <div class="chat" role="region" aria-label="Chat about Abinesh">
+        <div class="chat-controls">
+          <label for="model-select">Model</label>
+          <select id="model-select"></select>
+          <button id="load-model" class="btn btn-primary" type="button">Load model</button>
+        </div>
+        <div class="chat-status">
+          <p id="chat-status-text" aria-live="polite"></p>
+          <progress id="chat-progress" max="100" value="0" hidden></progress>
+        </div>
+
+        <div id="chat-log" class="chat-log" aria-live="polite">
+          <div class="msg msg-bot"><div class="msg-body">Hi! Ask me about Abinesh's experience, RefinePoint, or his skills.</div></div>
+        </div>
+
+        <div class="suggestions" aria-label="Example questions">
+          <button type="button" class="chip-btn" data-question="What is RefinePoint?">What is RefinePoint?</button>
+          <button type="button" class="chip-btn" data-question="What did he build at Societe Generale?">What did he build at Societe Generale?</button>
+          <button type="button" class="chip-btn" data-question="Does he have agentic AI experience?">Agentic AI experience?</button>
+          <button type="button" class="chip-btn" data-question="How does this chat work?">How does this chat work?</button>
+          <button type="button" class="chip-btn" data-question="How can I contact him?">How can I contact him?</button>
+        </div>
+
+        <form id="chat-form" class="chat-form">
+          <label class="visually-hidden" for="chat-input">Your question</label>
+          <input id="chat-input" type="text" maxlength="300" autocomplete="off" placeholder="Ask a question about Abinesh…">
+          <button id="ask-btn" class="btn btn-primary" type="submit">Ask</button>
+          <button id="stop" class="btn" type="button" hidden>Stop</button>
+        </form>
+      </div>
+      <p class="fineprint">Small models can still get things wrong; the facts each answer used are listed under it.
+        Models are downloaded once from Hugging Face and cached by your browser.</p>
+    </section>
+
+    <section class="wrap section" id="skills" aria-labelledby="skills-title">
+      <h2 id="skills-title">Skills</h2>
+      <dl class="skills">
+        <div><dt>Backend</dt><dd>Java 8–21, Spring Boot, Spring Cloud Gateway, REST, Kafka, Azure Event Hub, Service Bus, TypeScript, SQL</dd></div>
+        <div><dt>Data</dt><dd>Apache Spark (on Kubernetes), PostgreSQL, MySQL, DuckDB, Airflow, Quartz</dd></div>
+        <div><dt>AI</dt><dd>Agentic AI, MCP, Spring AI, LLM integration (Claude, OpenAI-compatible, local GGUF models), RAG, structured output, prompt-injection defence</dd></div>
+        <div><dt>Cloud &amp; DevOps</dt><dd>Azure, Kubernetes (AKS), Docker, Terraform, Jenkins, Azure DevOps, GitLab CI, ELK, Prometheus, Grafana</dd></div>
+        <div><dt>Identity</dt><dd>OAuth 2.0, OIDC, SAML, Keycloak, Okta, Ping Federate, OpenLDAP</dd></div>
+      </dl>
+    </section>
+
+    <section class="wrap section" id="education" aria-labelledby="education-title">
+      <h2 id="education-title">Education &amp; certification</h2>
+      <ul class="plain">
+        <li><b>B.E. Electrical and Electronics Engineering</b>, RMK Engineering College, 2014–2018</li>
+        <li><b>Microsoft Certified: Azure Administrator Associate</b> (AZ-104)</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p><a href="mailto:abineshsiva191@gmail.com">abineshsiva191@gmail.com</a> ·
+        <a href="https://www.linkedin.com/in/abineshsubramani">LinkedIn</a> ·
+        <a href="https://github.com/abinesh1006">GitHub</a></p>
+      <p class="fineprint">Static site, no tracking. The chat uses <a href="https://github.com/ngxson/wllama">wllama</a> (MIT).</p>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { initChat } from './js/chat.js';
+    initChat();
+    // The previous version of this site registered a service worker; remove it so visitors get this page.
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((regs) => regs.forEach((r) => r.unregister())).catch(() => {});
+    }
+  </script>
 </body>
 </html>
